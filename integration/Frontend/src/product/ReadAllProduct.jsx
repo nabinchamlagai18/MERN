@@ -40,26 +40,21 @@ const ReadAllProduct = () => {
 
   return (
     <div>
-      <div>
-        <button onClick={() => navigate("/product/create")} style={{ margin: "10px" }}>
-          Create
-        </button>
-      </div>
       {products.map((value) => (
-        <div key={value._id} style={{ border: "solid red 1px", marginBottom: "10px", padding: "10px" }}>
+        <div key={value._id} style={{marginBottom: "10px", padding: "10px" }}>
           <p>Product Name: {value.name}</p>
           <p>Price: {value.price}</p>
           <p>Available Quantity: {value.quantity}</p>
           <p>Description: {value.description}</p>
 
-          <button style={{ marginRight: "10px" }} onClick={() => navigate(`/product/${value._id}`)}>
+          <button style={{ marginRight: "5px" }} onClick={() => navigate(`/product/${value._id}`)}>
             View Details
           </button>
-          <button style={{ marginRight: "10px" }} onClick={() => navigate(`/product/update/${value._id}`)}>
+          <button style={{ marginRight: "5px" }} onClick={() => navigate(`/product/update/${value._id}`)}>
             Edit
           </button>
           {/* Fixed: calls handleDelete(value._id) directly */}
-          <button style={{ marginRight: "10px", backgroundColor: "#ff4d4d", color: "white" }} onClick={() => handleDelete(value._id)}>
+          <button style={{backgroundColor: "#f87502", color: "white" }} onClick={() => handleDelete(value._id)}>
             Remove
           </button>
         </div>

@@ -40,11 +40,6 @@ const ReadAllUser = () => {
 
   return (
     <div>
-      <div>
-        <button onClick={() => navigate("/user/create")} style={{ margin: "10px" }}>
-          Create
-        </button>
-      </div>
       {users.map((value) => (
         <div key={value._id} style={{ border: "solid red 1px", marginBottom: "10px", padding: "10px" }}>
           <p>User Name: {value.name}</p>
@@ -59,7 +54,7 @@ const ReadAllUser = () => {
           <button style={{ marginRight: "10px" }} onClick={() => navigate(`/user/update/${value._id}`)}>
             Edit
           </button>
-          <button style={{ marginRight: "10px", backgroundColor: "#ff4d4d", color: "white" }} onClick={() => handleDelete(value._id)}>
+          <button style={{backgroundColor: "#e04a13", color: "white" }} onClick={() => handleDelete(value._id)}>
             Remove
           </button>
         </div>

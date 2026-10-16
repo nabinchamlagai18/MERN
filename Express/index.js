@@ -11,11 +11,6 @@ import jobRoute from "./src/routes/jobRoute.js";
 import cors from "cors";
 let app = express();
 
-app.listen(8000, () => {
-    console.log("application is listening at port 8000")
-    connectToDb()
-})
-
 app.use(cors()) //enabling cors make use hit api's through browser
 app.use(json()) //this step makes the backend capable of understanding json language
 app.use("/", firstRoute)
@@ -23,6 +18,20 @@ app.use("/product", productRoute)
 app.use("/user", userRoute)
 app.use("/review", reviewRoute)
 app.use("/job",jobRoute)
+
+const startServer = async () => {
+    try {
+        await connectToDb()
+        app.listen(8000, () => {
+            console.log("application is listening at port 8000")
+        })
+    } catch (error) {
+        console.error("Unable to start server: MongoDB is unavailable.", error.message)
+        process.exitCode = 1
+    }
+}
+
+startServer()
 
 
 /* 

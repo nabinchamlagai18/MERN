@@ -26,7 +26,7 @@ const ReadSingleUser = () => {
         ← Back to Users
       </button>
 
-      <div style={{ border: "1px solid #ccc", padding: "20px", borderRadius: "8px" }}>
+      <div style={{ border: "1px solid #18ac56", padding: "20px", borderRadius: "8px" }}>
         <h2>{user.name}</h2>
         <hr />
         {/* Fixed: Replaced product fields with user schema properties */}
@@ -44,5 +44,6 @@ const ReadSingleUser = () => {
     </div>
   );
 };
+
 
 export default ReadSingleUser;
